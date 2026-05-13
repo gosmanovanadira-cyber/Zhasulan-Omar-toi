@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════
+   1. GOOGLE FONTS — Lora + Playfair Display
+   ═══════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ═══════════════════════════════════════════
+   2. TAILWIND CSS
+   ═══════════════════════════════════════════ */
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   3. CSS VARIABLES — Font System & Colors
+   ═══════════════════════════════════════════ */
+:root {
+  --ivory: #F6F1E8;
+  --gold: #C8A96A;
+  --gold-light: #D4BA82;
+  --gold-dark: #A8884A;
+  --sand: #E9DDCF;
+  --brown: #2B2620;
+  --brown-light: #3D362E;
+}
+
+/* ═══════════════════════════════════════════
+   4. FORCED FONT REPLACEMENT (Принудительная замена)
+   ═══════════════════════════════════════════ */
+
+/* Принудительно ставим Lora на весь сайт */
+* {
+  font-family: 'Lora', serif !important;
+}
+
+/* Заголовки делаем чуть более выразительными */
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.font-cormorant,
+.font-playfair,
+.font-philosopher {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Исправляем шрифт в таймере и кнопках */
+span, p, button, .font-sans, .font-vibes {
+  font-family: 'Lora', serif !important;
+}
+
+/* ═══════════════════════════════════════════
+   5. TAILWIND UTILITY CLASSES (сохраняем все)
+   ═══════════════════════════════════════════ */
+@layer utilities {
+  .font-cormorant {
+    font-family: 'Playfair Display', serif !important;
+  }
+  .font-vibes {
+    font-family: 'Lora', serif !important;
+  }
+  .font-playfair {
+    font-family: 'Playfair Display', serif !important;
+  }
+  .font-philosopher {
+    font-family: 'Playfair Display', serif !important;
+  }
+  .font-sans {
+    font-family: 'Lora', serif !important;
+  }
+
+  /* Custom Glows */
+  .gold-glow {
+    box-shadow: 0 0 40px rgba(200, 169, 106, 0.15);
+  }
+  .gold-glow-strong {
+    box-shadow: 0 0 60px rgba(200, 169, 106, 0.3);
+  }
+  .gold-glow-text {
+    text-shadow: 0 0 20px rgba(200, 169, 106, 0.4);
+  }
+
+  /* Glassmorphism */
+  .luxury-glass {
+    background: rgba(43, 38, 32, 0.65);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(200, 169, 106, 0.2);
+  }
+  .luxury-glass-light {
+    background: rgba(246, 241, 232, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 169, 106, 0.15);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   6. KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════ */
+@keyframes slowDrift {
+  0% { transform: translateY(0px) scale(1); opacity: 0.05; }
+  50% { transform: translateY(-15px) scale(1.03); opacity: 0.08; }
+  100% { transform: translateY(0px) scale(1); opacity: 0.05; }
+}
+
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+
+@keyframes shimmerPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes fadeUpReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inkReveal {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleInCard {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ═══════════════════════════════════════════
+   7. ANIMATION UTILITY CLASSES
+   ═══════════════════════════════════════════ */
+.animate-slow-drift {
+  animation: slowDrift 12s ease-in-out infinite;
+}
+
+.animate-float-1 {
+  animation: floatEmoji 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatEmoji 8s ease-in-out infinite 1s;
+}
+
+.animate-float-3 {
+  animation: floatEmoji 7s ease-in-out infinite 2s;
+}
+
+.animate-shimmer {
+  animation: shimmerPulse 4s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-ink-reveal {
+  animation: inkReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleInCard 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ═══════════════════════════════════════════
+   8. SCROLLBAR HIDE
+   ═══════════════════════════════════════════ */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ═══════════════════════════════════════════
+   9. BASE STYLES
+   ═══════════════════════════════════════════ */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--brown);
+  color: var(--ivory);
+  font-family: 'Lora', serif !important;
+}
+
+::selection {
+  background: rgba(200, 169, 106, 0.3);
+  color: var(--ivory);
+}
