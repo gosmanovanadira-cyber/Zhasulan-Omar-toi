@@ -38,9 +38,15 @@ export const Footer: React.FC = () => {
           <span className="font-sans text-[8px] uppercase tracking-[0.2em] text-[#E9DDCF]">
             Premium Cultural Digital Experience
           </span>
-          <span className="font-sans text-[8px] text-[#E9DDCF]/60 tracking-wider">
-            Designed for Jasulan &amp; Omar © 2026
-          </span>
+          <a 
+  href="https://wa.me/77066000966" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-sans text-[9px] tracking-widest uppercase text-[#C8A96A] hover:text-[#F6F1E8] transition-colors duration-300 mt-1 flex flex-col items-center gap-1"
+>
+  <span>Тапсырыс беру: @Nadira</span>
+  <span className="opacity-60 text-[7px]">Premium Digital Invitations</span>
+</a>
         </div>
       </div>
     </footer>
