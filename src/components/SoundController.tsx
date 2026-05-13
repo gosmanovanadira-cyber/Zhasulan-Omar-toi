@@ -7,7 +7,7 @@ export const SoundController: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Beautiful Kazakh soft instrumental / dombra / piano ambient track
-  const audioUrl = "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f2.mp3";
+  const audioUrl = "/music.mp3";
 
   useEffect(() => {
     const audio = new Audio(audioUrl);
